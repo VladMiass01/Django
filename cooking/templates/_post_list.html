@@ -1,0 +1,11 @@
+<div class="card text-center">
+    <div class="card-header">{{ post.category }}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{ post }}</h5>
+        <p class="card-text">{{ post.content | truncatewords:25}}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Подробнее</a>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <p class="card-text">Дата публикации {{ post.created_at }}</p>
+    </div>
+</div>

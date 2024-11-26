@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block main %}
+<div class="d-flex justify-content-between">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">{{ post.category }}
+            </div>
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body">
+                {% if post.photo %}
+                <img src="{{ post.photo.url }}" width="300" alt="">
+                {% else %}
+                <img src="https://www.raumplus.ru/upload/iblock/99e/Skoro-zdes-budet-foto.jpg" width="300" alt="">
+                {% endif %}
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">
+                    {{ post.content | linebreaks }}
+                </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <p class="card-text">Дата публикации {{ post.created_at }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
